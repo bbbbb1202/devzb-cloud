@@ -51,7 +51,7 @@
 	</dependencyManagement>
 
 	<build>
-		<finalName>devzb-eureka</finalName>
+		<finalName>devzb-cloud-eureka</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

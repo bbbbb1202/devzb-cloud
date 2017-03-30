@@ -57,7 +57,7 @@
 	</dependencyManagement>
 
 	<build>
-		<finalName>devzb-config</finalName>
+		<finalName>devzb-cloud-config</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
