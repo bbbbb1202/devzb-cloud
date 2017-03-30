@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
 
 	public List<SsoUser> getUsers() {
 		SsoUserExample example = new SsoUserExample();
-		example.setOrderByClause("id desc limit 10");
+		example.setOrderByClause("id desc limit 100");
 		return ssoUserMapperExt.selectByExample(example);
 	}
 }
