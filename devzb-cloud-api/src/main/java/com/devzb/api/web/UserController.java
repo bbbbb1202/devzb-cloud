@@ -17,14 +17,13 @@ import com.devzb.framework.web.BaseController;
  *
  */
 @RestController
-@RequestMapping("user")
 public class UserController extends BaseController {
 
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping(value = "")
-	public List<SsoUser> readUserInfo() {
+	@RequestMapping(value = "user")
+	public List<SsoUser> user() {
 		log.info("访问了/user...");
 		List<SsoUser> users = userService.getUsers();
 		return users;
