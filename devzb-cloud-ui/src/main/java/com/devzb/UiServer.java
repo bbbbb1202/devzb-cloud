@@ -2,11 +2,9 @@ package com.devzb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.hystrix.EnableHystrix;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 /**
  * 启动器
@@ -16,16 +14,13 @@ import org.springframework.web.client.RestTemplate;
  */
 @SpringBootApplication
 @EnableEurekaClient
-@EnableHystrix
+@EnableCircuitBreaker
+@EnableFeignClients
+//@RibbonClient(name = "uiClient", configuration = RibbonConfiguation.class)
 public class UiServer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(UiServer.class, args);
 	}
 
-	@LoadBalanced
-	@Bean
-	RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
 }
