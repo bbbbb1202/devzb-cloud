@@ -1,3 +1,4 @@
+
 package com.devzb;
 
 import org.springframework.boot.SpringApplication;
@@ -25,6 +26,12 @@ import feign.Request;
 public class UiServer {
 
 	public static void main(String[] args) {
+		String[] params = new String[args.length + 1];
+		for (int i = 0; i < args.length; i++) {
+			System.out.println(args[i]);
+			params[i] = args[i];
+		}
+		params[params.length - 1] = " >devzb-ui.log";
 		SpringApplication.run(UiServer.class, args);
 	}
 
